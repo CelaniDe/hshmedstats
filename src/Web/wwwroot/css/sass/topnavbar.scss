@@ -1,0 +1,24 @@
+﻿$secondary-logo-width: 33px;
+$header-font-size: 15px;
+
+.header {
+    margin: 10px 5px 5px 15px;
+    padding: 4px 12px;
+    font-size: 14px;
+}
+
+.header_logo {
+    width: $secondary-logo-width;
+    height: auto;
+}
+
+.header_text {
+    display: inline;
+    font-size: $header-font-size;
+    position: relative;
+    top: 2.5px;
+}
+
+.welcome-message {
+    font-size: $header-font-size;
+}

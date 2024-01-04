@@ -1,0 +1,138 @@
+﻿@using Microsoft.AspNetCore.Http
+@using hshmedstats.Web
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Add local styles, mostly for plugins css file -->
+    @if (IsSectionDefined("Styles"))
+    {@RenderSection("Styles", required: false)}
+
+    <environment names="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.css" />
+        <link rel="stylesheet" href="~/lib/toastr/toastr.min.css" />
+        <link rel="stylesheet" href="~/css/animate.css" />
+        <link rel="stylesheet" href="~/css/sass/topnavbar.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/sass/global.css" asp-append-version="true" />
+    </environment>
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="~/lib/toastr/toastr.min.css" />
+        <link rel="stylesheet" href="~/css/animate.css" />
+        <link rel="stylesheet" href="~/css/sass/topnavbar.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/sass/global.min.css" asp-append-version="true" />
+    </environment>
+
+
+</head>
+<body class="fixed-nav @Context.Session.GetString("minNavBar")">
+
+    <!-- Skin configuration box -->
+    <!-- <partial name="_SkinConfig" /> -->
+    <!-- Wrapper-->
+    <div id="wrapper" class="@Html.PageClass()">
+
+        <!-- Navigation -->
+        <partial name="_Navigation" />
+
+        <!-- Page wraper -->
+        <div id="page-wrapper" class="gray-bg @ViewBag.SpecialClass">
+
+            <!-- Top Navbar -->
+            <partial name="_TopNavbar" />
+
+            <!-- Main view  -->
+            @RenderBody()
+
+            <!-- Footer -->
+            <partial name="_Footer" />
+
+        </div>
+        <!-- End page wrapper-->
+        <!-- Right Sidebar -->
+
+    </div>
+    <!-- End wrapper-->
+
+    @RenderSection("toast", required: false)
+
+<environment names="Development">
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/Popper/popper.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/lib/metisMenu/dist/jquery.metisMenu.js"></script>
+    <script src="~/lib/slimScroll/jquery.slimscroll.js"></script>
+    <script src="~/lib/pace/pace.js"></script>
+    <script src="~/lib/toastr/toastr.min.js"></script>
+    <script src="~/lib/ladda/dist/spin.min.js"></script>
+    <script src="~/lib/ladda/dist/ladda.min.js"></script>
+    <script src="~/lib/ladda/dist/ladda.jquery.min.js"></script>
+    <script src="~/js/script.js" asp-append-version="true"></script>
+    <script src="~/js/validationresult.js" asp-append-version="true"></script>
+    <script src="~/js/Shared/datatable.js"></script>
+    <script src="~/js/Shared/global.js"></script>
+    <script src="~/js/Shared/types.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            var toast = JSON.parse(@Html.Raw(Json.Serialize(TempData["toast"])));
+            if (toast) {
+                if (toast.TypeString === 'success') {
+                    toastr.success(toast.Message);
+                }
+                else if (toast.TypeString === 'warning') {
+                    toastr.warning(toast.Message);
+                }
+                else {
+                    toastr.error(toast.Message);
+                }
+            }
+        });
+    </script>
+
+</environment>
+<environment names="Staging,Production">
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/Popper/popper.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/lib/metisMenu/dist/jquery.metisMenu.js"></script>
+    <script src="~/lib/pace/pace.min.js"></script>
+    <script src="~/lib/slimScroll/jquery.slimscroll.min.js"></script>
+    <script src="~/lib/toastr/toastr.min.js"></script>
+    <script src="~/lib/ladda/dist/spin.min.js"></script>
+    <script src="~/lib/ladda/dist/ladda.min.js"></script>
+    <script src="~/lib/ladda/dist/ladda.jquery.min.js"></script>
+    <script src="~/js/script.js" asp-append-version="true"></script>
+    <script src="~/js/validationresult.min.js" asp-append-version="true"></script>
+    <script src="~/js/Shared/datatable.min.js" asp-append-version="true"></script>
+    <script src="~/js/Shared/global.min.js" asp-append-version="true"></script>
+
+
+    <script type="text/javascript">
+        $(function () {
+            var toast = JSON.parse(@Html.Raw(Json.Serialize(TempData["toast"])));
+            if (toast) {
+                if (toast.TypeString === 'success') {
+                    toastr.success(toast.Message);
+                }
+                else if (toast.TypeString === 'warning') {
+                    toastr.warning(toast.Message);
+                }
+                else {
+                    toastr.error(toast.Message);
+                }
+            }
+            });
+    </script>
+</environment>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,23 @@
+﻿@import "Variables.scss";
+
+
+.login_logo_container {
+    margin: 0 auto;
+    width: $main-logo-width;
+    padding-top:50px;
+}
+
+.login_logo {
+    width: $main-logo-width;
+    height: auto;
+}
+
+.login_button {
+    background: $primary-color !important;
+    border-color: $primary-color !important;
+    font-size:16px;
+}
+
+.login_form {
+    margin-top: 50px;
+}

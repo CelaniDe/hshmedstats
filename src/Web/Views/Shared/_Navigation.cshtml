@@ -1,0 +1,121 @@
+﻿@using hshmedstats.Web
+<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav metismenu" id="side-menu">
+           
+                <li class="@Html.IsSelected(controller: "Dashboard")">
+                    <a href="@Url.Action("Index", "Dashboard")"><i class="fa fa-th-large"></i> <span class="nav-label" data-i18n="nav.dashboard">Dashboard</span></a>
+                </li>
+                <li class="@Html.IsSelected(controller: "Deal")">
+                    <a href="@Url.Action("Index", "Deal")"><i class="fa fa-handshake-o"></i> <span class="nav-label" data-i18n="nav.layouts">Deals</span> </a>
+                </li>
+                <li class="@Html.IsSelected(controller: "SubmissionForm")">
+                    <a href="@Url.Action("Index", "SubmissionForm")"><i class="fa fa-files-o"></i> <span class="nav-label" data-i18n="nav.layouts">Submitted Applications</span> </a>
+                </li>
+                <li class="@Html.IsSelected(controller: "Invoice")">
+                    <a href="@Url.Action("Index", "Invoice")"><i class="fa fa-file-text-o"></i> <span class="nav-label" data-i18n="nav.layouts">Invoices</span> </a>
+                </li>
+                <li class="@Html.IsSelected(controller: "BankAccount")">
+                    <a href="@Url.Action("Index", "BankAccount")"><i class="fa fa-file-text-o"></i> <span class="nav-label" data-i18n="nav.layouts">Bank Accounts</span> </a>
+                </li>
+                <li class="@Html.IsSelectedMulti(new List<Tuple<string, string>> { Tuple.Create("ClientGroup","Index"),
+                      Tuple.Create("Client","Index"),
+                      Tuple.Create("Payer","Index"),
+                      Tuple.Create("ClientGroup","Details"),
+                      Tuple.Create("Contact","Index"),
+                      Tuple.Create("Contact","Details"),
+                      Tuple.Create("Client","Details"),
+                      Tuple.Create("Payer","Details"),
+                      Tuple.Create("Payer", "Address")})">
+                    <a href="@Url.Action("Index", "Client")"><i class="fa fa-users"></i> <span class="nav-label" data-i18n="nav.layouts">Contacts</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Client", cssClass: "in")">
+                        <li class="@Html.IsSelectedMulti(new List<Tuple<string, string>> { Tuple.Create("Client", "Index"), Tuple.Create("Client", "Details") })"><a href="@Url.Action("Index", "Client")">Institutions</a></li>
+                        <li class="@Html.IsSelectedMulti(new List<Tuple<string, string>> { Tuple.Create("ClientGroup", "Index"), Tuple.Create("ClientGroup", "Details") })"><a href="@Url.Action("Index", "ClientGroup")">Institution Groups</a></li>
+                        <li class="@Html.IsSelectedMulti(new List<Tuple<string, string>> { Tuple.Create("Contact", "Index"), Tuple.Create("Contact", "Details") })"><a href="@Url.Action("Index", "Contact")">Persons</a></li>
+                        <li class="@Html.IsSelectedMulti(new List<Tuple<string, string>> { Tuple.Create("Payer", "Index"), Tuple.Create("Payer", "Details"), Tuple.Create("Payer", "Address") })"><a href="@Url.Action("Index", "Payer")">Payers</a></li>
+                    </ul>
+                </li>
+                <li class="@Html.IsSelectedMulti(new List<Tuple<string, string>> {
+                      Tuple.Create("Arranger","Index"),
+                      Tuple.Create("LawFirm","Index"),
+                      Tuple.Create("Investor","Index")
+                  })">
+                    <a href="@Url.Action("Index", "Arranger")"><i class="fa fa-list-alt"></i> <span class="nav-label" data-i18n="nav.layouts">Lists</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Arranger", cssClass: "in")">
+                        <li class="@Html.IsSelectedMulti(new List<Tuple<string, string>> { Tuple.Create("Arranger", "Index"), Tuple.Create("Arranger", "Details") })"><a href="@Url.Action("Index", "Arranger")">Arrangers</a></li>
+                        <li class="@Html.IsSelectedMulti(new List<Tuple<string, string>> { Tuple.Create("LawFirm", "Index"), Tuple.Create("LawFirm", "Details") })"><a href="@Url.Action("Index", "LawFirm")">Transaction Law Firms</a></li>
+                        <li class="@Html.IsSelectedMulti(new List<Tuple<string, string>> { Tuple.Create("Investor", "Index"), Tuple.Create("Investor", "Details") })"><a href="@Url.Action("Index", "Investor")">Investors</a></li>
+                    </ul>
+                </li>
+                <li class="@Html.IsSelected(controller: "Payment")">
+                    <a href="@Url.Action("Index", "Payment")"><i class="fa fa-money"></i> <span class="nav-label" data-i18n="nav.layouts">Payments</span> </a>
+                </li>
+                <li class="@Html.IsSelected(controller: "MatchBilling")">
+                    <a href="@Url.Action("Index", "MatchBilling")"><i class="fa fa-search"></i> <span class="nav-label" data-i18n="nav.layouts">Match Billing</span> </a>
+                </li>
+                <li class="@Html.IsSelected(controller: "Report")">
+                    <a href=""><i class="fa fa-bar-chart-o"></i> <span class="nav-label" data-i18n="nav.layouts">Reports</span><span class="fa arrow"></span> </a>
+                    <ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Report", cssClass: "in")">
+                        <li class="@Html.IsSelected(action: "InvoiceReport")"><a href="@Url.Action("InvoiceReport", "Report")">Account Report</a></li>
+                        <li class="@Html.IsSelected(action: "InvoiceNumbers")"><a href="@Url.Action("InvoiceNumbers", "Report")">Invoices / Payments</a></li>
+                        <li class="@Html.IsSelected(action: "InvoiceAmounts", controller: "Report")"><a href="@Url.Action("InvoiceAmounts", "Report")">Actual Revenue</a></li>
+                        <li class="@Html.IsSelected(action: "InvoiceTypes")"><a href="@Url.Action("InvoiceTypes", "Report")">Invoices Status</a></li>
+                        <li class="@Html.IsSelected(action: "DealsExpiring")"><a href="@Url.Action("DealsExpiring", "Report")">Expiring Deals</a></li>
+                        <li class="@Html.IsSelected(action: "ForecastedRevenue")"><a href="@Url.Action("ForecastedRevenue", "Report")">Forecasted Deferrals</a></li>
+                        <li class="@Html.IsSelected(action: "ClientGroupRevenue")"><a href="@Url.Action("ClientGroupRevenue", "Report")">Top 10 Clients by Revenue</a></li>
+                        <li class="@Html.IsSelected(action: "DealsExpectedClosingsOverdue")"><a href="@Url.Action("DealsExpectedClosingsOverdue", "Report")">Expected Closings Overdue</a></li>
+
+                    </ul>
+                </li>
+                <li class="@Html.IsSelected(controller: "Event")">
+                    <a href="@Url.Action("Index", "Event")"><i class="fa fa-calendar-check-o"></i> <span class="nav-label" data-i18n="nav.Events">Events</span> </a>
+                </li>
+                <li class="@Html.IsSelected(controller: "Task")">
+                    <a href="@Url.Action("Index", "Task")"><i class="fa fa-thumb-tack"></i> <span class="nav-label" data-i18n="nav.layouts">Tasks</span> </a>
+                </li>
+                <li class="@Html.IsSelected(controller: "Reminder")">
+                    <a href="@Url.Action("Index", "Reminder")"><i class="fa fa-hourglass"></i> <span class="nav-label" data-i18n="nav.layouts">Follow Up</span> </a>
+                </li>
+                <li class="@Html.IsSelectedMulti(new List<Tuple<string, string>> {
+                      Tuple.Create("Customize","Currency"),
+                      Tuple.Create("Customize","AssetTypes"),
+                      Tuple.Create("Customize","AssetTypeDetails"),
+                      Tuple.Create("Customize","PriceCatalogue"),
+                      Tuple.Create("Customize","PriceCatalogueDetails"),
+                      Tuple.Create("Customize","EmailTemplate"),
+                      Tuple.Create("Customize","EmailTemplateDetails"),
+                      Tuple.Create("Customize","InvoiceTemplate"),
+                      Tuple.Create("Customize","InvoiceDetails"),
+                      Tuple.Create("Vat","Index"),
+                      Tuple.Create("Vat","Details"),
+                      Tuple.Create("Customize","FileCategories"),
+                      Tuple.Create("Customize","FileCategoryDetails"),
+                      Tuple.Create("Customize","AppConfigs"),
+                      Tuple.Create("Customize","AppConfigDetails"),
+                      Tuple.Create("Customize","WebJobSettingsDetails")
+
+                  })">
+                    <a href="@Url.Action("Index", "Customize")"><i class="fa fa-wrench"></i> <span class="nav-label" data-i18n="nav.layouts">Settings</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Customize", cssClass: "in")">
+                        <li class="@Html.IsSelected(action: "Currency")"><a href="@Url.Action("Currency", "Customize")">Currency</a></li>
+                        <li class="@Html.IsSelectedMulti(new List<Tuple<string, string>> { Tuple.Create("Customize", "AssetTypes"), Tuple.Create("Customize", "AssetTypeDetails") })"><a href="@Url.Action("AssetTypes", "Customize")">Asset Type</a></li>
+                        <li class="@Html.IsSelectedMulti(new List<Tuple<string, string>> { Tuple.Create("Customize", "PriceCatalogue"), Tuple.Create("Customize", "PriceCatalogueDetails") })"><a href="@Url.Action("PriceCatalogue", "Customize")">Pricing</a></li>
+                        <li class="@Html.IsSelectedMulti(new List<Tuple<string, string>> { Tuple.Create("Vat", "Index"), Tuple.Create("Vat", "Details") })"><a href="@Url.Action("Index", "Vat")">VAT Rates</a></li>
+                        <li class="@Html.IsSelectedMulti(new List<Tuple<string, string>> { Tuple.Create("Customize", "EmailTemplate"), Tuple.Create("Customize", "EmailTemplateDetails") })"><a href="@Url.Action("EmailTemplate", "Customize")">Email Templates</a></li>
+                        <li class="@Html.IsSelectedMulti(new List<Tuple<string, string>> { Tuple.Create("Customize", "InvoiceTemplate"), Tuple.Create("Customize", "InvoiceDetails") })"><a href="@Url.Action("InvoiceTemplate", "Customize")">Invoice Templates</a></li>
+                        <li class="@Html.IsSelectedMulti(new List<Tuple<string, string>> { Tuple.Create("Customize", "FileCategories"), Tuple.Create("Customize", "FileCategoryDetails") })"><a href="@Url.Action("FileCategories", "Customize")">File Categories</a></li>
+                        <li class="@Html.IsSelectedMulti(new List<Tuple<string, string>> { Tuple.Create("Customize", "AppConfigs"), Tuple.Create("Customize", "AppConfigDetails") })"><a href="@Url.Action("AppConfigs", "Customize")">Application Settings</a></li>
+                        <li class="@Html.IsSelectedMulti(new List<Tuple<string, string>> { Tuple.Create("Customize", "WebJobSettings"), Tuple.Create("Customize", "WebJobSettingsDetails") })"><a href="@Url.Action("WebJobSettings", "Customize")">Web Job Settings</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="@Html.IsSelected(controller: "UserManagement")">
+                    <a href="@Url.Action("Index", "UserManagement")"><i class="fa fa-user"></i> <span class="nav-label" data-i18n="nav.metrics">User Management</span> </a>
+                </li>
+                <li class="@Html.IsSelected(controller: "Automation")">
+                    <a href="@Url.Action("Index", "Automation")"><i class="fa fa-cogs"></i> <span class="nav-label" data-i18n="nav.metrics">Automation</span> </a>
+                </li>
+        </ul>
+    </div>
+</nav>

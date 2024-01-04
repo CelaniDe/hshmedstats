@@ -1,0 +1,14 @@
+﻿[
+  {
+    "outputFile": "wwwroot/css/sass/variables.css",
+    "inputFile": "wwwroot/css/sass/variables.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/sass/login.css",
+    "inputFile": "wwwroot/css/sass/login.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/sass/topnavbar.css",
+    "inputFile": "wwwroot/css/sass/topnavbar.scss"
+  }
+]

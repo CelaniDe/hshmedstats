@@ -1,0 +1,54 @@
+[
+  {
+    "outputFileName": "wwwroot/js/validationresult.min.js",
+    "inputFiles": [
+      "wwwroot/js/validationresult.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/customlib/datatablemoment.min.js",
+    "inputFiles": [
+      "wwwroot/js/customlib/datatablemoment.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/Shared/datatable.min.js",
+    "inputFiles": [
+      "wwwroot/js/Shared/datatable.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/Shared/filter.min.js",
+    "inputFiles": [
+      "wwwroot/js/Shared/filter.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/Shared/global.min.js",
+    "inputFiles": [
+      "wwwroot/js/Shared/global.js",
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+
+
+]

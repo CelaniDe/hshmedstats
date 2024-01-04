@@ -1,0 +1,72 @@
+﻿.bootstrap-tagsinput {
+  width: 100%;
+}
+.bootstrap-tagsinput .tag {
+  padding-bottom: 1px !important;
+  padding-top: 1px !important;
+}
+
+.change_status_button {
+  margin-top: 27px !important;
+}
+
+.revert_postponed_button {
+    margin-top: 27px !important;
+}
+
+/* Chrome, Safari, Edge, Opera */
+.integer-input::-webkit-outer-spin-button,
+.integer-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.integer-input {
+  -moz-appearance: textfield;
+}
+
+.label-icon-link {
+  margin-left: 3px;
+}
+
+@media only screen and (min-width: 776px) {
+  .table-html-buttons {
+    top: 35px !important;
+  }
+}
+.table-html-buttons {
+  position: absolute;
+  right: 19px;
+  top: 73px;
+}
+
+.report-html-buttons {
+  float: right;
+}
+
+.pcs-menu-button {
+  margin-left: 22px;
+}
+
+.btn-outline-primary {
+  color: #DB332C;
+  border-color: #DB332C;
+}
+
+.btn-outline-primary:hover {
+  color: #fff;
+  background-color: #DB332C;
+  border-color: #DB332C;
+}
+
+.btn-outline-primary:active {
+  color: #fff !important;
+  background-color: #DB332C !important;
+  border-color: #DB332C !important;
+  box-shadow: 0 0 0 0.2rem rgba(219, 51, 44, 0.5) !important;
+}
+
+.country-select {
+  display: block !important;
+}

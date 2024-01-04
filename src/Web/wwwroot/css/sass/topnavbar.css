@@ -1,0 +1,21 @@
+﻿.header {
+  margin: 10px 5px 5px 15px;
+  padding: 4px 12px;
+  font-size: 14px;
+}
+
+.header_logo {
+  width: 33px;
+  height: auto;
+}
+
+.header_text {
+  display: inline;
+  font-size: 15px;
+  position: relative;
+  top: 2.5px;
+}
+
+.welcome-message {
+  font-size: 15px;
+}
