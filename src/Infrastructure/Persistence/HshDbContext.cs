@@ -12,11 +12,23 @@ using System.Threading.Tasks;
 
 namespace hshmedstats.Persistence
 {
-    public class DbContext : IdentityDbContext<ApplicationUser, ApplicationRole, int>, IDbContext
+    public sealed class HshDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, int>, IHshDbContext
     {
-        public DbContext(DbContextOptions<DbContext> options)
+        public DbSet<ApplicationUser> ApplicationUsers() => Users;
+
+        public HshDbContext()
+        {
+            
+        }
+        public HshDbContext(DbContextOptions<HshDbContext> options)
             : base(options)
         {
+        }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+            builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
 
         public int UserId { get; set; }
@@ -65,17 +77,8 @@ namespace hshmedstats.Persistence
             return base.Set<TEntity>();
         }
 
-        public DbSet<ApplicationUser> ApplicationUsers()
-        {
-            return Users;
-        }
-
         public IDbContextTransaction BeginTransaction() => Database.BeginTransaction();
 
-        protected override void OnModelCreating(ModelBuilder builder)
-        {
-            base.OnModelCreating(builder);
-            builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
-        }
+       
     }
 }

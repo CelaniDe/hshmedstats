@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Pcs.Web.Models
+namespace hshmedstats.Web.Models
 {
     public class ResultDto
     {

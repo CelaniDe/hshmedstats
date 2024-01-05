@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace Pcs.Web.Models
+namespace hshmedstats.Web.Models
 {
-    public class ToastDto
+    public class ToastModel
     {
-        public ToastDto(ToastType type, string message)
+        public ToastModel(ToastType type, string message)
         {
             Type = type;
             Message = message;

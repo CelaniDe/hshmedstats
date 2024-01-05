@@ -10,7 +10,7 @@ using System.Security.Claims;
 
 namespace hshmedstats.Application
 {
-    public static class DependacyInjection
+    public static class DependancyInjection
     {
         public static IServiceCollection AddCore(this IServiceCollection services)
         {
@@ -36,7 +36,7 @@ namespace hshmedstats.Application
             });
 
 
-            services.AddMediatR(typeof(DependacyInjection));
+            services.AddMediatR(x => x.RegisterServicesFromAssembly(typeof(DependancyInjection).Assembly));
             services.AddMediatRHandlers();
             services.AddValidatorsFromAssemblyContaining<PatientDoValidator>();
           

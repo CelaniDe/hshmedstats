@@ -1,6 +1,6 @@
 ﻿namespace hshmedstats.Application.Interfaces
 {
-    public interface IDbContext
+    public interface IHshDbContext
     {
         public int UserId { get; set; }
     }

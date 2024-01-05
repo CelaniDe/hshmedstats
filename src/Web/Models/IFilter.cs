@@ -1,4 +1,4 @@
-﻿namespace Pcs.Web.Models
+﻿namespace hshmedstats.Web.Models
 {
     public interface IFilter
     {

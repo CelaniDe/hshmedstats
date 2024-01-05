@@ -7,24 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Models\DealFile\**" />
-    <Compile Remove="TempDataJsReport\**" />
-    <Content Remove="Models\DealFile\**" />
-    <Content Remove="TempDataJsReport\**" />
-    <EmbeddedResource Remove="Models\DealFile\**" />
-    <EmbeddedResource Remove="TempDataJsReport\**" />
-    <None Remove="Models\DealFile\**" />
-    <None Remove="TempDataJsReport\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Remove="compilerconfig.json" />
-    <Content Remove="wwwroot\templates\InvoiceEU.html" />
-    <Content Remove="wwwroot\templates\InvoiceUK.html" />
-  </ItemGroup>
-
-
-  <ItemGroup>
     <None Include="compilerconfig.json" />
     <None Include="wwwroot\lib\bootstrap-datepicker\.editorconfig" />
     <None Include="wwwroot\lib\bootstrap-datepicker\.github\ISSUE_TEMPLATE.md" />
@@ -319,10 +301,6 @@
     <None Include="wwwroot\lib\timepicker\src\timepicker\index.js" />
     <None Include="wwwroot\lib\timepicker\src\timepicker\rounding.js" />
     <None Include="wwwroot\lib\timepicker\src\__tests__\timepicker-test.js" />
-    <None Include="wwwroot\templates\InvoiceEU.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="wwwroot\templates\InvoiceUK.html" />
   </ItemGroup>
 
 
@@ -339,6 +317,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.0" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.0" />
     <PackageReference Include="Serilog" Version="3.1.1" />
     <PackageReference Include="Serilog.AspNetCore" Version="8.0.0" />
     <PackageReference Include="Serilog.Settings.Configuration" Version="8.0.0" />
@@ -348,7 +327,6 @@
 
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
     <Folder Include="Extensions\" />
     <Folder Include="Mapper\" />
   </ItemGroup>

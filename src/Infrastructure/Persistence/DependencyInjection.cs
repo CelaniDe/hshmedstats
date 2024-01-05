@@ -9,25 +9,25 @@ using System;
 
 namespace hshmedstats.Persistence
 {
-    public static class DependencyInjectioncs
+    public static class DependencyInjection
     {
         public static IServiceCollection AddPersistence(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<DbContext>(options =>
+            services.AddDbContext<HshDbContext>(options =>
             {
                 options.UseNpgsql(configuration.GetConnectionString("Database"));
             });
 
-            services.AddTransient<IDbContext>(provider =>
+            services.AddTransient<IHshDbContext>(provider =>
             {
-                var dbContext = provider.GetService<IDbContext>();
+                var dbContext = provider.GetService<IHshDbContext>();
                 var loggedInUser = provider.GetService<LoggedInUser>();
                 dbContext.UserId = loggedInUser.Id;
                 return dbContext;
             });
  
             services.AddIdentity<ApplicationUser, ApplicationRole>()
-                .AddEntityFrameworkStores<DbContext>();
+                .AddEntityFrameworkStores<HshDbContext>();
 
             services.Configure<IdentityOptions>(options =>
             {
