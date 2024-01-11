@@ -1,0 +1,103 @@
+﻿@model hshmedstats.Web.Models.User.UserViewModel
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        @if (Model.Id != null)
+        {
+            <h2>Update User</h2>
+        }
+        else
+        {
+            <h2>Add User</h2>
+        }
+
+    </div>
+    <div class="col-lg-2">
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="ibox float-e-margins">
+        <div class="ibox-content">
+            <form asp-action="Details" method="post">
+                <input name="isValid" type="hidden" value="@ViewData.ModelState.IsValid.ToString()" />
+                <input asp-for="Id" type="hidden" />
+                <div class="row">
+                    <div class="col-md-4 form-group">
+                        <label asp-for="Username"></label><span style="color:red;">*</span>
+                        <input asp-for="Username" class="form-control" />
+                        <span asp-validation-for="Username" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label asp-for="Password"></label><span style="color:red;">*</span>
+                        <input asp-for="Password" type="password" class="form-control" autocomplete="new-password" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 form-group">
+                        <label asp-for="FirstName"></label>
+                        <input asp-for="FirstName" class="form-control" />
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label asp-for="LastName"></label>
+                        <input asp-for="LastName" class="form-control" />
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label asp-for="PhoneNumber"></label>
+                        <input asp-for="PhoneNumber" class="form-control" />
+                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 form-group">
+                        <label asp-for="Email"></label><span style="color:red;">*</span>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label asp-for="Role"></label><span style="color:red;">*</span>
+                        <select asp-items="@ViewBag.Roles" class="form-control chosen-select" asp-for="Role">
+                            <option value=""></option>
+                        </select>
+                        <span asp-validation-for="Role" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <button class="ladda-button btn btn-primary" type="submit" data-style="expand-left">Save</button>
+                <a class="btn btn-secondary ladda-button" data-style="slide-left" href="/User/Index">Close</a>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<environment names="Development">
+    @section Styles {
+        <link rel="stylesheet" href="~/lib/chosen/bootstrap-chosen.min.css" type="text/css" />
+    }
+    @section Scripts {
+        <script src="~/lib//chosen/chosen.jquery.js"></script>
+        <script src="~/js/Controllers/User/user.js" asp-append-version="true"></script>
+        <script type="text/javascript" asp-append-version="true">
+            $(function () {
+                new UserDetails();
+            });
+        </script>
+    }
+</environment>
+
+<environment names="Staging,Production">
+    @section Styles {
+        <link rel="stylesheet" href="~/lib/chosen/bootstrap-chosen.min.css" type="text/css" />
+    }
+    @section Scripts {
+        <script src="~/lib//chosen/chosen.jquery.js"></script>
+        <script src="~/js/Controllers/User/user.min.js" asp-append-version="true"></script>
+        <script type="text/javascript" asp-append-version="true">
+            $(function () {
+                new UserDetails();
+            });
+        </script>
+    }
+</environment>

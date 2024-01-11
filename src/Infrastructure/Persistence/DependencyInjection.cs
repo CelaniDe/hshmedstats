@@ -20,7 +20,7 @@ namespace hshmedstats.Persistence
 
             services.AddTransient<IHshDbContext>(provider =>
             {
-                var dbContext = provider.GetService<IHshDbContext>();
+                var dbContext = provider.GetService<HshDbContext>();
                 var loggedInUser = provider.GetService<LoggedInUser>();
                 dbContext.UserId = loggedInUser.Id;
                 return dbContext;

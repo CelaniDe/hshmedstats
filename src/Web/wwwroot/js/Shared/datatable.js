@@ -110,6 +110,19 @@
         this.datatable.columns.adjust();
     }
 
+
+    editButton(href, name = "Edit") {
+        return `<a class="btn btn-primary ladda-button" data-style="slide-left" href="${href}">${name}</a>`;
+    }
+
+    customButton(href, name, className = "") {
+        return `<button class="btn btn-primary ladda-button ${className}" data-style="slide-left">${name}</button>`;
+    }
+
+    downloadButton(href, innerText) {
+        return `<a class="btn btn-primary" target="_blank"href="${href}">${innerText}</a>`;
+    }
+
     getSelectedIds() {
         let selected = this.datatable.column(0).checkboxes.selected();
         let data = this.datatable.rows().data().filter(d => Array.from(selected).includes(d.id));

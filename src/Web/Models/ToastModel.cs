@@ -10,6 +10,15 @@ namespace hshmedstats.Web.Models
             Message = message;
         }
 
+        public ToastModel(ToastType type, int? id, string entityName)
+        {
+            Type = type;
+            if (type == ToastType.success)
+            {
+                Message = $"{entityName} {(id == null ? "added" : "updated")} successfully";
+            }
+        }
+
         public ToastType Type { get; set; }
         public string Message { get; set; }
         public string TypeString

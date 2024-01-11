@@ -19,11 +19,11 @@ namespace hshmedstats.Web.Controllers
         }
 
         [AllowAnonymous]
-        public async Task<IActionResult> Login(string? returnUrl = null)
+        public async Task<IActionResult> Login(string returnUrl = null)
         {
             if (User.Identity.IsAuthenticated)
             {
-                return Redirect("/Dashboard/Index");
+                return RedirectToAction("Index", "Dashboard");
             }
 
             ViewData["ReturnUrl"] = returnUrl;
@@ -36,7 +36,7 @@ namespace hshmedstats.Web.Controllers
 
         [AllowAnonymous]
         [HttpPost]
-        public async Task<IActionResult> Login(LoginViewModel model, string? returnUrl = null)
+        public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = null)
         {
             if (ModelState.IsValid)
             {
@@ -64,8 +64,8 @@ namespace hshmedstats.Web.Controllers
 
         public async Task<IActionResult> Logout()
         {
-            await HttpContext.SignOutAsync();
-
+            await _SignInManager.SignOutAsync();
+            
             return RedirectToAction("Login");
         }
     }

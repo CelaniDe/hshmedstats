@@ -1,0 +1,65 @@
+﻿@using hshmedstats.Web.Models.User
+@model IEnumerable<UserViewModel>
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>User Management</h2>
+    </div>
+    <div class="col-lg-2">
+    </div>
+</div>
+
+
+<div class="wrapper wrapper-content fadeInRight">
+    <div class="ibox float-e-margins">
+        <div class="ibox-content">
+
+            <a class="btn btn-primary ladda-button" data-style="slide-left" href="/User/Details" id="partial_create_button">Create User</a>
+            <hr class="hr-line-dashed">
+
+            <div class="col-lg-12 table-responsive">
+                <table id="user_table" style="width:100%" class="table table-striped table-bordered table-hover dataTable"></table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<environment names="Development">
+    @section Styles {
+        <link rel="stylesheet" href="~/lib/datatables/datatables.min.css" type="text/css" />
+        <link rel="stylesheet" href="~/lib/datatables/DataTables-1.11.3/css/dataTables.bootstrap4.min.css" type="text/css" />
+    }
+
+    @section Scripts {
+        <script src="~/lib/datatables/datatables.min.js"></script>
+        <script src="~/lib/dataTables/DataTables-1.11.3/js/dataTables.bootstrap4.min.js"></script>
+        <script src="~/js/Controllers/User/user.js" asp-append-version="true"></script>
+
+        <script type="text/javascript" asp-append-version="true">
+            $(function () {
+                new UserIndex(@Html.Raw(Json.Serialize(Model)));
+            });
+        </script>
+    }
+</environment>
+
+
+<environment names="Staging,Production">
+    @section Styles {
+        <link rel="stylesheet" href="~/lib/datatables/datatables.min.css" type="text/css" />
+        <link rel="stylesheet" href="~/lib/datatables/DataTables-1.11.3/css/dataTables.bootstrap4.min.css" type="text/css" />
+    }
+
+    @section Scripts {
+        <script src="~/lib/datatables/datatables.min.js"></script>
+        <script src="~/lib/dataTables/DataTables-1.11.3/js/dataTables.bootstrap4.min.js"></script>
+        <script src="~/js/Controllers/User/user.min.js" asp-append-version="true"></script>
+
+        <script type="text/javascript" asp-append-version="true">
+            $(function () {
+                new UserIndex(@Html.Raw(Json.Serialize(Model)));
+            });
+        </script>
+    }
+</environment>

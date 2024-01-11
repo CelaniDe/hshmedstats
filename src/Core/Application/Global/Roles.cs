@@ -8,7 +8,7 @@ namespace hshmedstats.Application.Global
 {
     public static class Roles
     {
-        public static readonly string Admin = "Admin";
-        public static readonly string Doctor = "Doctor";
+        public const string Admin = "Admin";
+        public const string Doctor = "Doctor";
     }
 }

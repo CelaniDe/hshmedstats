@@ -4,6 +4,7 @@ using hshmedstats.Domain;
 using hshmedstats.Persistence;
 using System.Linq;
 using hshmedstats.Application.Global;
+using System;
 
 namespace hshmedstats.Web
 {
@@ -25,6 +26,8 @@ namespace hshmedstats.Web
                     Email = "admin@exis.com",
                     FirstName = "Admin",
                     LastName = "Admin",
+                    CreatedAt = DateTimeHelper.Now,
+                    UpdatedAt = DateTimeHelper.Now,
                 };
                 var result = await userManager.CreateAsync(admin, "Admin123@");
 

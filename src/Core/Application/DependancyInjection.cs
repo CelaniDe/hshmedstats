@@ -38,7 +38,7 @@ namespace hshmedstats.Application
 
             services.AddMediatR(x => x.RegisterServicesFromAssembly(typeof(DependancyInjection).Assembly));
             services.AddMediatRHandlers();
-            services.AddValidatorsFromAssemblyContaining<PatientDoValidator>();
+            services.AddValidatorsFromAssemblyContaining<PatientDtoValidator>();
           
             return services;
         }

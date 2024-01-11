@@ -107,22 +107,6 @@ $(document).ready(function () {
     });
 
 
-
-    // Minimalize menu
-    $('.navbar-minimalize').on('click', function (event) {
-        event.preventDefault();
-        $("body").toggleClass("mini-navbar");
-        SmoothlyMenu();
-
-
-        if ($("body").hasClass("mini-navbar")) {
-            $.get("/Account/StoreMenuPreference?minNavBarActive=mini-navbar");
-        }
-        else {
-            $.get("/Account/StoreMenuPreference?minNavBarActive=");
-        }
-    });
-
     // Tooltips demo
     $('.tooltip-demo').tooltip({
         selector: "[data-toggle=tooltip]",

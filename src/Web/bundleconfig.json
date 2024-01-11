@@ -10,6 +10,16 @@
     }
   },
   {
+    "outputFileName": "wwwroot/js/Controllers/User/user.min.js",
+    "inputFiles": [
+      "wwwroot/js/Controllers/User/user.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
     "outputFileName": "wwwroot/js/validationresult.min.js",
     "inputFiles": [
       "wwwroot/js/validationresult.js"
