@@ -1,0 +1,389 @@
+﻿@model hshmedstats.Web.Models.Patient.PatientExcusedConductViewModel
+
+
+<form>
+    <div class="row">
+        <div class="col-md-3 form-group">
+            <label asp-for="Antiplatelet"></label>
+            <select asp-items="@ViewBag.AnswerTypes" class="form-control chosen-select" asp-for="Antiplatelet">
+            </select>
+        </div>
+        <div class="col-md-3 form-group">
+            <label asp-for="AntiplateletDateFrom"></label>
+            <div class="input-group date">
+                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                <input asp-for="AntiplateletDateFrom" class="form-control" type="text" autocomplete="off" />
+            </div>
+        </div>
+        <div class="col-md-3 form-group">
+            <label asp-for="AntiplateletDateTo"></label>
+            <div class="input-group date">
+                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                <input asp-for="AntiplateletDateTo" class="form-control" type="text" autocomplete="off" />
+            </div>
+        </div>
+        <div class="col-md-3 form-group">
+            <label asp-for="AntiplatelContinues"></label>
+            <select asp-items="@ViewBag.YesNo" class="form-control chosen-select" asp-for="AntiplatelContinues">
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3 form-group">
+            <label asp-for="Anticoagulants"></label>
+            <select asp-items="@ViewBag.AnswerTypes" class="form-control chosen-select" asp-for="Anticoagulants">
+            </select>
+        </div>
+        <div class="col-md-3 form-group">
+            <label asp-for="AnticoagulantsDateFrom"></label>
+            <div class="input-group date">
+                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                <input asp-for="AnticoagulantsDateFrom" class="form-control" type="text" autocomplete="off" />
+            </div>
+        </div>
+        <div class="col-md-3 form-group">
+            <label asp-for="AnticoagulantsDateTo"></label>
+            <div class="input-group date">
+                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                <input asp-for="AnticoagulantsDateTo" class="form-control" type="text" autocomplete="off" />
+            </div>
+        </div>
+        <div class="col-md-3 form-group">
+            <label asp-for="AnticoagulantsContinues"></label>
+            <select asp-items="@ViewBag.YesNo" class="form-control chosen-select" asp-for="AnticoagulantsContinues">
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3 form-group">
+            <label asp-for="LipidLoweringAgents"></label>
+            <select asp-items="@ViewBag.AnswerTypes" class="form-control chosen-select" asp-for="LipidLoweringAgents">
+            </select>
+        </div>
+        <div class="col-md-3 form-group">
+            <label asp-for="LipidLoweringAgentsDateFrom"></label>
+            <div class="input-group date">
+                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                <input asp-for="LipidLoweringAgentsDateFrom" class="form-control" type="text" autocomplete="off" />
+            </div>
+        </div>
+        <div class="col-md-3 form-group">
+            <label asp-for="LipidLoweringAgentsDateTo"></label>
+            <div class="input-group date">
+                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                <input asp-for="LipidLoweringAgentsDateTo" class="form-control" type="text" autocomplete="off" />
+            </div>
+        </div>
+        <div class="col-md-3 form-group">
+            <label asp-for="LipidLoweringAgentsContinues"></label>
+            <select asp-items="@ViewBag.YesNo" class="form-control chosen-select" asp-for="LipidLoweringAgentsContinues">
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3 form-group">
+            <label asp-for="DiureticsAgents"></label>
+            <select asp-items="@ViewBag.AnswerTypes" class="form-control chosen-select" asp-for="DiureticsAgents">
+            </select>
+        </div>
+        <div class="col-md-3 form-group">
+            <label asp-for="DiureticsDateFrom"></label>
+            <div class="input-group date">
+                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                <input asp-for="DiureticsDateFrom" class="form-control" type="text" autocomplete="off" />
+            </div>
+        </div>
+        <div class="col-md-3 form-group">
+            <label asp-for="DiureticsDateTo"></label>
+            <div class="input-group date">
+                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                <input asp-for="DiureticsDateTo" class="form-control" type="text" autocomplete="off" />
+            </div>
+        </div>
+        <div class="col-md-3 form-group">
+            <label asp-for="DiureticsContinues"></label>
+            <select asp-items="@ViewBag.YesNo" class="form-control chosen-select" asp-for="DiureticsContinues">
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3 form-group">
+            <label asp-for="Corticosteroids"></label>
+            <select asp-items="@ViewBag.AnswerTypes" class="form-control chosen-select" asp-for="Corticosteroids">
+            </select>
+        </div>
+        <div class="col-md-3 form-group">
+            <label asp-for="CorticosteroidsDateFrom"></label>
+            <div class="input-group date">
+                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                <input asp-for="CorticosteroidsDateFrom" class="form-control" type="text" autocomplete="off" />
+            </div>
+        </div>
+        <div class="col-md-3 form-group">
+            <label asp-for="CorticosteroidsDateTo"></label>
+            <div class="input-group date">
+                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                <input asp-for="CorticosteroidsDateTo" class="form-control" type="text" autocomplete="off" />
+            </div>
+        </div>
+        <div class="col-md-3 form-group">
+            <label asp-for="CorticosteroidsContinues"></label>
+            <select asp-items="@ViewBag.YesNo" class="form-control chosen-select" asp-for="CorticosteroidsContinues">
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3 form-group">
+            <label asp-for="EstrogenAsReplacement"></label>
+            <select asp-items="@ViewBag.AnswerTypes" class="form-control chosen-select" asp-for="EstrogenAsReplacement">
+            </select>
+        </div>
+        <div class="col-md-3 form-group">
+            <label asp-for="EstrogenAsReplacementDateFrom"></label>
+            <div class="input-group date">
+                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                <input asp-for="EstrogenAsReplacementDateFrom" class="form-control" type="text" autocomplete="off" />
+            </div>
+        </div>
+        <div class="col-md-3 form-group">
+            <label asp-for="EstrogenAsReplacementDateTo"></label>
+            <div class="input-group date">
+                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                <input asp-for="EstrogenAsReplacementDateTo" class="form-control" type="text" autocomplete="off" />
+            </div>
+        </div>
+        <div class="col-md-3 form-group">
+            <label asp-for="EstrogenAsReplacementContinues"></label>
+            <select asp-items="@ViewBag.YesNo" class="form-control chosen-select" asp-for="EstrogenAsReplacementContinues">
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3 form-group">
+            <label asp-for="OtherHormoneTherapy"></label>
+            <select asp-items="@ViewBag.AnswerTypes" class="form-control chosen-select" asp-for="OtherHormoneTherapy">
+            </select>
+        </div>
+        <div class="col-md-3 form-group">
+            <label asp-for="OtherHormoneTherapyDateFrom"></label>
+            <div class="input-group date">
+                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                <input asp-for="OtherHormoneTherapyDateFrom" class="form-control" type="text" autocomplete="off" />
+            </div>
+        </div>
+        <div class="col-md-3 form-group">
+            <label asp-for="OtherHormoneTherapyDateTo"></label>
+            <div class="input-group date">
+                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                <input asp-for="OtherHormoneTherapyDateTo" class="form-control" type="text" autocomplete="off" />
+            </div>
+        </div>
+        <div class="col-md-3 form-group">
+            <label asp-for="OtherHormoneTherapyContinues"></label>
+            <select asp-items="@ViewBag.YesNo" class="form-control chosen-select" asp-for="OtherHormoneTherapyContinues">
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3 form-group">
+            <label asp-for="ProtonPumpInhibitors"></label>
+            <select asp-items="@ViewBag.AnswerTypes" class="form-control chosen-select" asp-for="ProtonPumpInhibitors">
+            </select>
+        </div>
+        <div class="col-md-3 form-group">
+            <label asp-for="ProtonPumpInhibitorsDateFrom"></label>
+            <div class="input-group date">
+                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                <input asp-for="ProtonPumpInhibitorsDateFrom" class="form-control" type="text" autocomplete="off" />
+            </div>
+        </div>
+        <div class="col-md-3 form-group">
+            <label asp-for="ProtonPumpInhibitorsDateTo"></label>
+            <div class="input-group date">
+                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                <input asp-for="ProtonPumpInhibitorsDateTo" class="form-control" type="text" autocomplete="off" />
+            </div>
+        </div>
+        <div class="col-md-3 form-group">
+            <label asp-for="ProtonPumpInhibitorsContinues"></label>
+            <select asp-items="@ViewBag.YesNo" class="form-control chosen-select" asp-for="ProtonPumpInhibitorsContinues">
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3 form-group">
+            <label asp-for="Antihypertensives"></label>
+            <select asp-items="@ViewBag.AnswerTypes" class="form-control chosen-select" asp-for="Antihypertensives">
+            </select>
+        </div>
+        <div class="col-md-3 form-group">
+            <label asp-for="AntiarrhythmicsDateFrom"></label>
+            <div class="input-group date">
+                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                <input asp-for="AntiarrhythmicsDateFrom" class="form-control" type="text" autocomplete="off" />
+            </div>
+        </div>
+        <div class="col-md-3 form-group">
+            <label asp-for="AntiarrhythmicsDateTo"></label>
+            <div class="input-group date">
+                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                <input asp-for="AntiarrhythmicsDateTo" class="form-control" type="text" autocomplete="off" />
+            </div>
+        </div>
+        <div class="col-md-3 form-group">
+            <label asp-for="AntiarrhythmicsContinues"></label>
+            <select asp-items="@ViewBag.YesNo" class="form-control chosen-select" asp-for="AntiarrhythmicsContinues">
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3 form-group">
+            <label asp-for="InhaledBronchodilators"></label>
+            <select asp-items="@ViewBag.AnswerTypes" class="form-control chosen-select" asp-for="InhaledBronchodilators">
+            </select>
+        </div>
+        <div class="col-md-3 form-group">
+            <label asp-for="InhaledBronchodilatorsDateFrom"></label>
+            <div class="input-group date">
+                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                <input asp-for="InhaledBronchodilatorsDateFrom" class="form-control" type="text" autocomplete="off" />
+            </div>
+        </div>
+        <div class="col-md-3 form-group">
+            <label asp-for="InhaledBronchodilatorsDateTo"></label>
+            <div class="input-group date">
+                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                <input asp-for="InhaledBronchodilatorsDateTo" class="form-control" type="text" autocomplete="off" />
+            </div>
+        </div>
+        <div class="col-md-3 form-group">
+            <label asp-for="InhaledBronchodilatorsContinues"></label>
+            <select asp-items="@ViewBag.YesNo" class="form-control chosen-select" asp-for="InhaledBronchodilatorsContinues">
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3 form-group">
+            <label asp-for="Antidepressants"></label>
+            <select asp-items="@ViewBag.AnswerTypes" class="form-control chosen-select" asp-for="Antidepressants">
+            </select>
+        </div>
+        <div class="col-md-3 form-group">
+            <label asp-for="AntidepressantsDateFrom"></label>
+            <div class="input-group date">
+                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                <input asp-for="AntidepressantsDateFrom" class="form-control" type="text" autocomplete="off" />
+            </div>
+        </div>
+        <div class="col-md-3 form-group">
+            <label asp-for="AntidepressantsDateTo"></label>
+            <div class="input-group date">
+                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                <input asp-for="AntidepressantsDateTo" class="form-control" type="text" autocomplete="off" />
+            </div>
+        </div>
+        <div class="col-md-3 form-group">
+            <label asp-for="AntidepressantsContinues"></label>
+            <select asp-items="@ViewBag.YesNo" class="form-control chosen-select" asp-for="AntidepressantsContinues">
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3 form-group">
+            <label asp-for="Antidiabetic"></label>
+            <select asp-items="@ViewBag.AnswerTypes" class="form-control chosen-select" asp-for="Antidiabetic">
+            </select>
+        </div>
+        <div class="col-md-3 form-group">
+            <label asp-for="AntidiabeticDateFrom"></label>
+            <div class="input-group date">
+                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                <input asp-for="AntidiabeticDateFrom" class="form-control" type="text" autocomplete="off" />
+            </div>
+        </div>
+        <div class="col-md-3 form-group">
+            <label asp-for="AntidiabeticDateTo"></label>
+            <div class="input-group date">
+                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                <input asp-for="AntidiabeticDateTo" class="form-control" type="text" autocomplete="off" />
+            </div>
+        </div>
+        <div class="col-md-3 form-group">
+            <label asp-for="AntidiabeticContinues"></label>
+            <select asp-items="@ViewBag.YesNo" class="form-control chosen-select" asp-for="AntidiabeticContinues">
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3 form-group">
+            <label asp-for="Radiotherapy"></label>
+            <select asp-items="@ViewBag.AnswerTypes" class="form-control chosen-select" asp-for="Radiotherapy">
+            </select>
+        </div>
+        <div class="col-md-3 form-group">
+            <label asp-for="RadiotherapyDateFrom"></label>
+            <div class="input-group date">
+                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                <input asp-for="RadiotherapyDateFrom" class="form-control" type="text" autocomplete="off" />
+            </div>
+        </div>
+        <div class="col-md-3 form-group">
+            <label asp-for="RadiotherapyDateTo"></label>
+            <div class="input-group date">
+                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                <input asp-for="RadiotherapyDateTo" class="form-control" type="text" autocomplete="off" />
+            </div>
+        </div>
+        <div class="col-md-3 form-group">
+            <label asp-for="RadiotherapyContinues"></label>
+            <select asp-items="@ViewBag.YesNo" class="form-control chosen-select" asp-for="RadiotherapyContinues">
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3 form-group">
+            <label asp-for="Immunosuppressants"></label>
+            <select asp-items="@ViewBag.AnswerTypes" class="form-control chosen-select" asp-for="Immunosuppressants">
+            </select>
+        </div>
+        <div class="col-md-3 form-group">
+            <label asp-for="ImmunosuppressantsDateFrom"></label>
+            <div class="input-group date">
+                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                <input asp-for="ImmunosuppressantsDateFrom" class="form-control" type="text" autocomplete="off" />
+            </div>
+        </div>
+        <div class="col-md-3 form-group">
+            <label asp-for="ImmunosuppressantsDateTo"></label>
+            <div class="input-group date">
+                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                <input asp-for="ImmunosuppressantsDateTo" class="form-control" type="text" autocomplete="off" />
+            </div>
+        </div>
+        <div class="col-md-3 form-group">
+            <label asp-for="ImmunosuppressantsContinues"></label>
+            <select asp-items="@ViewBag.YesNo" class="form-control chosen-select" asp-for="ImmunosuppressantsContinues">
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 form-group">
+            <label asp-for="Other"></label>
+            <input asp-for="Other" class="form-control" autocomplete="off" />
+        </div>
+    </div>
+</form>

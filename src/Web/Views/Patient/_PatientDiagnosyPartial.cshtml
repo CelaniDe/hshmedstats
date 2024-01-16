@@ -8,19 +8,12 @@
         <select asp-items="@ViewBag.DiagnosisTypes" class="form-control chosen-select" asp-for="DiagnosisType">
         </select>
     </div>
-    <div class="col-md-4 form-group">
-        <label asp-for="DiagnosisDate"></label><span style="color:red;"> *</span>
-        <div class="input-group date">
-            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-            <input asp-for="DiagnosisDate" class="form-control" type="text" autocomplete="off" />
-        </div>
-    </div>
 </div>
 <hr class="hr-line-dashed">
 
 <div class="diagnsy_container">
 
-    <div class="diagnosis" id="ttp">
+    <div class="diagnosis ttp">
         <h3>TTP</h3>
         <div class="row">
             <div class="col-md-4 form-group">
@@ -59,8 +52,8 @@
 
 
 
-    <div class="diagnosis" id="hus_stma" hidden>
-        <h3>HUS STMA</h3>
+    <div class="diagnosis hus_stma" hidden>
+        <h3 id="diagnosis_heading">HUS</h3>
         <div class="row">
             <div class="col-md-4 form-group">
                 <label asp-for="ComplementInhibitor"></label><span style="color:red;"> *</span>
@@ -78,8 +71,15 @@
 
 
 
-    <div class="diagnosis" id="tatma" hidden>
+    <div class="diagnosis tatma" hidden>
         <h3>TA-TMA</h3>
+        <div class="row ttp tatma">
+            <div class="col-md-4 form-group">
+                <label asp-for="LevelOfDiagnosis"></label>
+                <input asp-for="LevelOfDiagnosis" class="form-control" autocomplete="off" />
+            </div>
+           
+        </div>
         <div class="row">
             <div class="col-md-4 form-group">
                 <label asp-for="DonorType"></label><span style="color:red;"> *</span>
@@ -315,11 +315,120 @@
         </div>
     </div>
 
-
-
-
-    <div class="general_data" hidden>
-
+    <div class="row diagnosis hus tatma">
+        <div class="col-md-4 form-group">
+            <label asp-for="AddOnActivation"></label><span style="color:red;"> *</span>
+            <select asp-items="@ViewBag.AnswerTypes" class="form-control chosen-select" asp-for="AddOnActivation">
+            </select>
+        </div>
+        <div class="col-md-4 form-group">
+            <label asp-for="AddOnActivationDetails"></label>
+            <input asp-for="AddOnActivationDetails" class="form-control" autocomplete="off" />
+        </div>
     </div>
 
+
+    <div class="general_data">
+        <div class="row">
+            <div class="col-md-4 form-group">
+                <label asp-for="CorticosisDosage"></label><span style="color:red;"> *</span>
+                <select asp-items="@ViewBag.YesNo" class="form-control chosen-select" asp-for="CorticosisDosage">
+                </select>
+            </div>
+            <div class="col-md-4 form-group">
+                <label asp-for="CorticosisDosageDetails"></label>
+                <input asp-for="CorticosisDosageDetails" class="form-control" autocomplete="off" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 form-group">
+                <label asp-for="Plasmapheresis"></label><span style="color:red;"> *</span>
+                <select asp-items="@ViewBag.YesNo" class="form-control chosen-select" asp-for="Plasmapheresis">
+                </select>
+            </div>
+            <div class="col-md-4 form-group">
+                <label asp-for="PlasmapheresisDetails"></label>
+                <input asp-for="PlasmapheresisDetails" class="form-control" autocomplete="off" />
+            </div>
+            <div class="col-md-4 form-group">
+                <label asp-for="PlasmapheresisAnswer"></label><span style="color:red;"> *</span>
+                <select asp-items="@ViewBag.YesNo" class="form-control chosen-select" asp-for="PlasmapheresisAnswer">
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 form-group">
+                <label asp-for="Rituximab"></label><span style="color:red;"> *</span>
+                <select asp-items="@ViewBag.YesNo" class="form-control chosen-select" asp-for="Rituximab">
+                </select>
+            </div>
+            <div class="col-md-4 form-group">
+                <label asp-for="RituximabDetails"></label>
+                <input asp-for="RituximabDetails" class="form-control" autocomplete="off" />
+            </div>
+            <div class="col-md-4 form-group">
+                <label asp-for="RituximabAnswer"></label><span style="color:red;"> *</span>
+                <select asp-items="@ViewBag.YesNo" class="form-control chosen-select" asp-for="RituximabAnswer">
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 form-group">
+                <label asp-for="OtherImmunoSuppression"></label>
+                <input asp-for="OtherImmunoSuppression" class="form-control" autocomplete="off" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 form-group">
+                <label asp-for="LowMolecularWeightHeparin"></label><span style="color:red;"> *</span>
+                <select asp-items="@ViewBag.YesNo" class="form-control chosen-select" asp-for="LowMolecularWeightHeparin">
+                </select>
+            </div>
+            <div class="col-md-4 form-group">
+                <label asp-for="LowMolecularWeightHeparinDetails"></label>
+                <input asp-for="LowMolecularWeightHeparinDetails" class="form-control" autocomplete="off" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 form-group">
+                <label asp-for="AntiplateletAgents"></label><span style="color:red;"> *</span>
+                <select asp-items="@ViewBag.YesNo" class="form-control chosen-select" asp-for="AntiplateletAgents">
+                </select>
+            </div>
+            <div class="col-md-4 form-group">
+                <label asp-for="AntiplateletAgentsDetails"></label>
+                <input asp-for="AntiplateletAgentsDetails" class="form-control" autocomplete="off" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 form-group">
+                <label asp-for="Recession"></label><span style="color:red;"> *</span>
+                <select asp-items="@ViewBag.YesNo" class="form-control chosen-select" asp-for="Recession">
+                </select>
+            </div>
+            <div class="col-md-4 form-group">
+                <label asp-for="Death"></label><span style="color:red;"> *</span>
+                <select asp-items="@ViewBag.YesNo" class="form-control chosen-select" asp-for="Death">
+                </select>
+            </div>
+            <div class="col-md-4 form-group">
+                <label asp-for="CauseOfDeath"></label>
+                <input asp-for="CauseOfDeath" class="form-control" autocomplete="off" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 form-group">
+                <label asp-for="DateOfLastFollowUp"></label><span style="color:red;"> *</span>
+                <div class="input-group date">
+                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                    <input asp-for="DateOfLastFollowUp" class="form-control" type="text" autocomplete="off" />
+                </div>
+            </div>
+            <div class="col-md-4 form-group">
+                <label asp-for="OtherComments"></label>
+                <input asp-for="OtherComments" class="form-control" autocomplete="off" />
+            </div>
+        </div>
+        
+    </div>
 </div>

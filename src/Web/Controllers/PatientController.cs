@@ -33,6 +33,12 @@ namespace hshmedstats.Web.Controllers
             return View(new PatientViewModel());
         }
 
+        public async Task<IActionResult> VisitDetails(int? id)
+        {
+            await LoadVisitDetailsViewBag();
+            return View(new PatientVisitDetailsViewModel());
+        }
+
 
         private async Task LoadDetailsViewBag()
         {
@@ -59,5 +65,17 @@ namespace hshmedstats.Web.Controllers
             ViewBag.GraftSourceTypes = Enum.GetValues<GraftSourceType>().Select(g => g.GetSelectListItem());
         }
 
+
+        private async Task LoadVisitDetailsViewBag()
+        {
+            ViewBag.YesNo = new List<SelectListItem>
+            {
+                new SelectListItem("ΝΑΙ","true"),
+                 new SelectListItem("ΌΧΙ", "false")
+            };
+
+            ViewBag.AnswerTypes = Enum.GetValues<AnswerType>().Select(g => g.GetSelectListItem());
+            ViewBag.BloodTypes = Enum.GetValues<BloodType>().Select(g => g.GetSelectListItem());
+        }
     }
 }

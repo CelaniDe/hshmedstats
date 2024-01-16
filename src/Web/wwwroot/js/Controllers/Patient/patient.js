@@ -44,8 +44,7 @@ class PatientDetails {
         initDate($("#BirthDate"));
         initDate($("#DiagnosisDate"));
         initDate($("#TransplantDate"));
-        initDate($("#DiagnosisDate"));
-
+        initDate($("#DateOfLastFollowUp"));
         Ladda.bind(".ladda-button");
 
         this.visitDatatable = new DataTable($("#patient_visit_table"), this.viewModel.patientVisits);
@@ -69,17 +68,52 @@ class PatientDetails {
             let type = $("#DiagnosisType").val();
 
             if (type === "0") {
-                $("#ttp").removeAttr("hidden");
+                $(".ttp").removeAttr("hidden");
             }
             else if (type === "1") {
-                $("#hus_stma").removeAttr("hidden");
+                $("#diagnosis_heading").text("HUS");
+                $(".hus_stma").removeAttr("hidden");
             }
             else if (type === "2") {
-                $("#hus_stma").removeAttr("hidden");
+                $("#diagnosis_heading").text("sTMA")
+                $(".hus_stma").removeAttr("hidden");
             }
             else if (type === "3") {
-                $("#tatma").removeAttr("hidden");
+                $(".tatma").removeAttr("hidden");
             }
         });
+    }
+}
+
+class PatientVisitDetails {
+    constructor(model) {
+        this.viewModel = model;
+        this.initUIElements();
+        this.initEvents();
+    }
+
+    initUIElements() {
+        let that = this;
+        $(".chosen-select-search").chosen({
+            width: '100%'
+        });
+
+        $(".chosen-select").chosen({
+            width: '100%'
+        });
+        $(".date").datetimepicker(
+            {
+                autoclose: true,
+                pickDate: false,
+                pick12HourFormat: false,
+                minView: 2,
+                format: 'dd/mm/yyyy',
+                dateOnly: true
+            }
+        );
+    
+    }
+
+    initEvents() {
     }
 }
