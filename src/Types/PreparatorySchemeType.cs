@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
+
 
 namespace Types
 {
     public enum PreparatorySchemeType
     {
+        [Display(Name = "Μυελοαφανιστικό")]
         BrainDestroyer,
+        [Display(Name = "Ελαττωμένης έντασης")]
         ReducedIntensity
     }
 }

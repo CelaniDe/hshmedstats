@@ -6,6 +6,7 @@ namespace hshmedstats.Domain.Models
     public sealed class Patient:BaseEntity, IHistoryEntity
     {
         public string Amka { get;set; }
+        public DateTime VisitDate { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string FatherName { get; set; }
@@ -21,28 +22,30 @@ namespace hshmedstats.Domain.Models
         public decimal Height { get; set; }
         public decimal Weight { get; set; }
         public decimal BMI { get; set; }
+        public int KarnofskyPerformanceStatus { get; set; }
 
+
+        //Patient History
         public bool PreviousEpisodeOfThromboticMicroangiopathy { get; set; }
-        public string ThromboticMicroangiopathyDetails { get; set; }
+        public string? ThromboticMicroangiopathyDetails { get; set; }
         public bool HeartDisease { get; set; }
-        public string HeartDiseaseDetails { get; set; }
+        public string? HeartDiseaseDetails { get; set; }
         public bool RespiratoryDisease { get; set; }
-        public string RespiratoryDiseaseDetails { get; set; }
+        public string? RespiratoryDiseaseDetails { get; set; }
         public bool EndocrineDisease { get; set; }
-        public string EndocrineDiseaseDetails { get; set; }
+        public string? EndocrineDiseaseDetails { get; set; }
         public bool KidneyDisease { get; set; }
-        public string KidneyDiseaseDetails { get; set; }
+        public string? KidneyDiseaseDetails { get; set; }
         public bool NeoplasticDisease { get; set; }
-        public string NeoplasticDiseaseDetails { get; set; }
+        public string? NeoplasticDiseaseDetails { get; set; }
         public bool AutoimmuneDisease { get; set; }
-        public string AutoimmuneDiseaseDetails { get; set; }
+        public string? AutoimmuneDiseaseDetails { get; set; }
         public bool Transplant { get; set; }
-        public string TransplantDetails { get; set; }
+        public string? TransplantDetails { get; set; }
 
 
         public int? ClinicId { get; set; }
         public Clinic Clinic { get; set; }
-
 
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }

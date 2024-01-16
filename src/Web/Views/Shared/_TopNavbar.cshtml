@@ -8,8 +8,12 @@
     <nav class="navbar navbar-fixed-top" role="navigation" style="margin-bottom: 0">
         <div class="navbar-header">
             <div class="header">
-                <p class="header_text">test</p>
-                <button type="button" class="navbar-minimalize btn btn-outline-primary pcs-menu-button"><i class="fa fa-bars"></i> </button>
+                <img src="~/images//logo.png" class="header_logo" />
+                @if (User.IsInRole(hshmedstats.Application.Global.Roles.Admin))
+                {
+                    <button type="button" class="navbar-minimalize btn btn-outline-primary pcs-menu-button"><i class="fa fa-bars"></i> </button>
+                }
+               
             </div>
            
         </div>

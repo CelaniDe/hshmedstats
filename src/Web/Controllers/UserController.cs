@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace hshmedstats.Web.Controllers
 {
-    [Authorize(Roles = Roles.Admin)]
+    [Authorize]
     public class UserController : BaseController
     {
       

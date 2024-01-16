@@ -1,0 +1,100 @@
+﻿@model hshmedstats.Web.Models.Patient.PatientViewModel
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Patient (Rimvydas Janusauskas)</h2>
+    </div>
+    <div class="col-lg-2">
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="ibox float-e-margins">
+        <div class="ibox-content">
+            <div class="tabs-container">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li><a class="nav-link active" data-toggle="tab" href="#patient_details"> ΔΗΜΟΓΡΑΦΙΚΑ</a></li>
+                    <li><a class="nav-link" data-toggle="tab" href="#patient_history"> ΙΣΤΟΡΙΚΟ</a></li>
+                    <li><a class="nav-link" data-toggle="tab" href="#patient_visits"> Visits</a></li>
+                    <li><a class="nav-link" data-toggle="tab" href="#patient_diagnosis"> ΔΙΑΓΝΩΣΗ</a></li>
+                </ul>
+
+                <div class="tab-content">
+
+                    <div role="tabpanel" id="patient_details" class="tab-pane active">
+                        <div class="panel-body">
+                            <partial name="_PatientDetailsPartial" model="Model.PatientDetails" />
+                        </div>
+                    </div>
+                    <div role="tabpanel" id="patient_history" class="tab-pane">
+                        <div class="panel-body">
+                            <partial name="_PatientHistoryPartial" model="Model.PatientHistory" />
+                        </div>
+                    </div>
+
+                    <div role="tabpanel" id="patient_visits" class="tab-pane">
+                        <div class="panel-body">
+                            <partial name="_PatientVisitsPartial" model="Model.PatientVisits" />
+                        </div>
+                    </div>
+
+                    <div role="tabpanel" id="patient_diagnosis" class="tab-pane">
+                        <div class="panel-body">
+                            <partial name="_PatientDiagnosyPartial" model="Model.PatientDiagnosy" />
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<environment names="Development">
+    @section Styles {
+        <link rel="stylesheet" href="~/lib/chosen/bootstrap-chosen.min.css" type="text/css" />
+        <link rel="stylesheet" href="~/lib/datatables/datatables.min.css" type="text/css" />
+        <link rel="stylesheet" href="~/lib/datatables/DataTables-1.11.3/css/dataTables.bootstrap4.min.css" type="text/css" />
+        <link rel="stylesheet" href="~/lib/datetimepicker/datetimepicker.min.css" type="text/css" />
+        <link rel="stylesheet" href="~/lib/chosen/bootstrap-chosen.min.css" type="text/css" />
+    }
+    @section Scripts {
+        <script src="~/lib/moment/moment.js"></script>
+        <script src="~/lib/datatables/datatables.min.js"></script>
+        <script src="~/lib/dataTables/DataTables-1.11.3/js/dataTables.bootstrap4.min.js"></script>
+        <script src="~/lib/datetimepicker/bootstrap-datetimepicker.min.js"></script>
+        <script src="~/js/customlib/datatablemoment.js"></script>
+        <script src="~/lib/chosen/chosen.jquery.min.js"></script>
+        <script src="~/js/Controllers/Patient/patient.js" asp-append-version="true"></script>
+        <script type="text/javascript" asp-append-version="true">
+            $(function () {
+                new PatientDetails(@Html.Raw(Json.Serialize(Model)));
+            });
+        </script>
+    }
+</environment>
+
+<environment names="Staging,Production">
+    @section Styles {
+        <link rel="stylesheet" href="~/lib/chosen/bootstrap-chosen.min.css" type="text/css" />
+        <link rel="stylesheet" href="~/lib/datatables/datatables.min.css" type="text/css" />
+        <link rel="stylesheet" href="~/lib/datatables/DataTables-1.11.3/css/dataTables.bootstrap4.min.css" type="text/css" />
+        <link rel="stylesheet" href="~/lib/datetimepicker/datetimepicker.min.css" type="text/css" />
+        <link rel="stylesheet" href="~/lib/chosen/bootstrap-chosen.min.css" type="text/css" />
+    }
+    @section Scripts {
+        <script src="~/lib/moment/moment.js"></script>
+        <script src="~/lib/datatables/datatables.min.js"></script>
+        <script src="~/lib/dataTables/DataTables-1.11.3/js/dataTables.bootstrap4.min.js"></script>
+        <script src="~/lib/datetimepicker/bootstrap-datetimepicker.min.js"></script>
+        <script src="~/js/customlib/datatablemoment.js"></script>
+        <script src="~/lib/chosen/chosen.jquery.min.js"></script>
+        <script src="~/js/Controllers/Patient/patient.min.js" asp-append-version="true"></script>
+        <script type="text/javascript" asp-append-version="true">
+            $(function () {
+                new PatientDetails(@Html.Raw(Json.Serialize(Model)));
+            });
+        </script>
+    }
+</environment>

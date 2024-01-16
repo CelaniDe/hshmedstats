@@ -20,7 +20,7 @@ namespace hshmedstats.Domain.Models
         public decimal? PT { get; set; }
         public decimal? APTT { get; set; }
         public decimal INR { get; set; }
-        public decimal? Fibrous { get; set; }
+        public decimal Fibrous { get; set; }
         public AnswerType ADAMTS13Deficiency { get; set; }
         public decimal? DetermineADAMTS13Activity { get; set; }
         public bool GeneticTesting { get; set; }
@@ -28,7 +28,7 @@ namespace hshmedstats.Domain.Models
         public bool StorageOfBiologicalMaterial { get; set; }
         public string? StorageOfBiologicalMaterialDetails { get; set; }
         public bool Pregnancy { get; set; }
-        public bool Sergeants { get; set; }
+        public bool Puerperium { get; set; }
         public bool CnsInsult { get; set; }
         public bool VaccinationsWithin30DaysOfTheEpisode { get; set; }
         public bool ArterialHypertension { get; set; }

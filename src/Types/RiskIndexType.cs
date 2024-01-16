@@ -1,13 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
+
 
 namespace Types
 {
     public enum RiskIndexType
     {
-        Low,Intermediate,High,VeryHigh
+        [Display(Name = "Low")]
+        Low,
+        [Display(Name = "Intermediate")]
+        Intermediate,
+        [Display(Name = "High")]
+        High,
+        [Display(Name = "Very High")]
+        VeryHigh
     }
 }

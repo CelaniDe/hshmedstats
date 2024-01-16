@@ -23,7 +23,7 @@ namespace hshmedstats.Web.Controllers
         {
             if (User.Identity.IsAuthenticated)
             {
-                return RedirectToAction("Index", "Dashboard");
+                return RedirectToAction("Index", "Patient");
             }
 
             ViewData["ReturnUrl"] = returnUrl;
@@ -51,7 +51,7 @@ namespace hshmedstats.Web.Controllers
                         return LocalRedirect(returnUrl);
                     }
 
-                    return RedirectToAction("Index", "Dashboard", null);
+                    return RedirectToAction("Index", "Patient", null);
                 }
 
                 ModelState.AddModelError("Password", "Invalid Login attemt.");

@@ -12,12 +12,13 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using hshmedstats.Web.Helpers;
 using Serilog;
+using hshmedstats.Web.Mapper;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.InitLogger(builder.Environment.IsDevelopment());
 builder.Host.UseSerilog();
 
-builder.Services.AddAutoMapper(typeof(PatientProfile), typeof(hshmedstats.Application.DependancyInjection));
+builder.Services.AddAutoMapper(typeof(PatientProfile), typeof(hshmedstats.Application.DependancyInjection), typeof(UserViewProfile));
 builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddCore();

@@ -20,6 +20,16 @@
     }
   },
   {
+    "outputFileName": "wwwroot/js/Controllers/Patient/patient.min.js",
+    "inputFiles": [
+      "wwwroot/js/Controllers/Patient/patient.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
     "outputFileName": "wwwroot/js/validationresult.min.js",
     "inputFiles": [
       "wwwroot/js/validationresult.js"
