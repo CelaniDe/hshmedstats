@@ -11,12 +11,12 @@ class PatientIndex {
         this.table = new DataTable($("#patient_table"), this.viewModel);
         this.table.init([
             { data: 'id', visible: false },
-            { data: 'amka', title: 'Amka' },
-            { data: 'fullName', title: 'Full Name' },
+            { data: 'amka', title: 'ΑΜΚΑ' },
+            { data: 'fullName', title: 'Ονοματεπώνυμο' },
             {
                 data: "id",
                 render: function (data, type, row, meta) {
-                    return that.table.editButton(`/Patient/Details/${data}`);
+                    return that.table.editButton(`/Patient/Details/${data}`, "Επεξεργασία");
                 }
             }
         ], null, { order: [[2, "asc"]] })
@@ -50,11 +50,11 @@ class PatientDetails {
         this.visitDatatable = new DataTable($("#patient_visit_table"), this.viewModel.patientVisits);
         this.visitDatatable.init([
             { data: 'id', visible: false },
-            { data: 'visitDate', title: 'Visit Date' },
+            { data: 'visitDate', title: 'Ημ. Επίσκεψης' },
             {
                 data: "id",
                 render: function (data, type, row, meta) {
-                    return that.visitDatatable.editButton(`/Patient/VisitDetails/${data}`);
+                    return that.visitDatatable.editButton(`/Patient/VisitDetails/${data}`, "Επεξεργασία");
                 }
             }
         ], null, { order: [[2, "asc"]] });
