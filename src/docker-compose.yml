@@ -1,0 +1,26 @@
+version: '3.8'
+services:
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sql_server_real_data_hshmed
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=YourStrong@Passw0rd  # Set a strong password
+    ports:
+      - "1433:1433"  # Expose SQL Server's default port
+    volumes:
+      - sql_data_real:/var/opt/mssql  # Persist database files
+
+  adminer:
+    image: adminer
+    container_name: adminer_real_data_hshmed
+    environment:
+      ADMINER_DEFAULT_SERVER: mssql
+    ports:
+      - "8080:8080"  # Expose Adminer on port 8080
+    depends_on:
+      - mssql  # Ensure SQL Server starts before Adminer
+
+volumes:
+  sql_data_real:
+    driver: local
