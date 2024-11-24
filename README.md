@@ -48,8 +48,6 @@ Follow these steps to set up the project on your local machine:
    dotnet run
    ```
 
-The application should now be running at http://localhost:5001 
-
 ## Contributing
 
 The default branch is **master**
