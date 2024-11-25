@@ -11,7 +11,7 @@ namespace Types
     {
         [Display(Name = "ΑΡΣΕΝΙΚΟ")]
         Male,
-        [Display(Name = "ΘΥΛΗΚΟ")]
+        [Display(Name = "ΘΗΛΥΚΟ")]
         Female,
     }
 }
