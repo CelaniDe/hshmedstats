@@ -259,7 +259,7 @@ namespace hshmedstats.Web.Models.Patient
         [Display(Name = "Κλινική")]
         public string? AddOnActivationDetails { get; set; }//Hus,TMA
 
-        [Display(Name = "ΚΟΡΤΙΚΟΕΙΣΗ (ΔΟΣΗ)")]
+        [Display(Name = "ΚΟΡΤΙΚΟΕΙΔΗ (ΔΟΣΗ)")]
         public bool CorticosisDosage { get; set; }//TTP,Hus,TMA
         [Display(Name = "Αν ναι, προσδιορίστε είδος, διάρκεια και δόση")]
         public string? CorticosisDosageDetails { get; set; }//TTP,Hus,TMA
